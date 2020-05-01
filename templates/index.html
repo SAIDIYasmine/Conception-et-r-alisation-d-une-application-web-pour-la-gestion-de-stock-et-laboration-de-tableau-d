@@ -1,0 +1,108 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Bootstrap Advance Admin Template</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/basic.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/static/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SETRONIC</a>
+            </div>
+            <div class="header-right">
+                <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
+                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+            </div>
+        </nav>
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <img src="{% static 'img/user.png' %}" class="img-thumbnail" />
+                            <div class="inner-text">
+                                Jhon Deo Alex
+                            <br />
+                                <small>Last Login : 2 Weeks Ago </small>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="index.html"><i class="fa-home"></i>Acceuil</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html"><i class="fa fa-user" style="color:white"></i>Administration</a>
+                    </li>
+                     <li>
+                        <a href="#"><i class="fa-files-o" style="color:white"></i>Statistiques <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="invoice.html"><i class="fa fa-coffee"></i>Invoice</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html"><i class="fa fa-flash "></i>Pricing</a>
+                            </li>
+                            <li>
+                                <a href="component.html"><i class="fa fa-key "></i>Components</a>
+                            </li>
+                            <li>
+                                <a href="social.html"><i class="fa fa-send "></i>Social</a>
+                            </li> 
+                            <li>
+                                <a href="message-task.html"><i class="fa fa-recycle "></i>Messages & Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="table.html"><i class="far fa-address-book" style="color:white"></i>Gestion Des Fournisseurs </a>
+                    </li>
+                      <li>
+                        <a href="gallery.html"><i class="fa fa-shopping-cart fa-fw"  style="color:white"></i>Gestion Des Clients</a>
+                    </li>
+                     <li>
+                        <a href="error.html"><i class=" fas fa-pallet"></i>Gestion Du Stock</a>
+                    </li>
+                    <li>
+                        <a href="login.html"><i class="fa fa-sign-in "></i>Gestion Des Entrées</a>
+                    </li>
+                    <li>
+                        <a href="blank.html"><i class="fa fa-sign-out "></i>Gestion Des Sorties</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">DASHBOARD</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div id="footer-sec">
+        &copy; 2014 YourCompany | Design By : <a href="http://www.binarytheme.com/" target="_blank">BinaryTheme.com</a>
+    </div>
+    <script src="{% static 'js/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery.metisMenu.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

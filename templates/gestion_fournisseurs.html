@@ -1,0 +1,48 @@
+{% include 'header.html' with c_acceuil="none" c_gestion_produits="none" c_gestion_entree="none" c_gestion_sortie="none" c_statistiques="none" c_administration="none" c_gestion_clients="none" c_gestion_fournisseurs="active-menu" c_gestion_stock="none" v_name="Gestion Des Fournisseurs" %}
+{% load static %}
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Gestion des fournisseurs</h1>
+                    </div>
+                </div>
+                <p>
+                    <a href="/ajouter_fournisseur/"><button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Ajouter</button></a>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Action</th>
+                                <th>Nom</th>
+                                <th>Adresse</th>
+                                <th>Mail</th>
+                                <th>Tel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for fournisseur in fournisseurs %}
+                            <tr>
+                                <td>{{fournisseur.id}}</td>
+                                <td><form method="post">  
+                                        {% csrf_token %}
+
+                                    <button class="btn btn-danger" formaction="../supprimer_fournisseur/{{fournisseur.id}}/" value="{{fournisseur.id}}"><i class="glyphicon glyphicon-minus"></i> Supprimer</button>
+                                    <button class="btn btn-inverse"><i class="fa fa-refresh"></i> Modifier</button>
+                                </form></td>
+                                <td>{{fournisseur.fournisseur_nom}}</td>
+                                <td>{{fournisseur.fournisseur_adresse}}</td>
+                                <td>{{fournisseur.fournisseur_mail}}</td>
+                                <td>{{fournisseur.fournisseur_tel}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include 'footer.html'%}
+

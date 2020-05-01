@@ -1,0 +1,13 @@
+{% include 'header.html' with c_acceuil="none" c_gestion_produits="none" c_gestion_entree="none" c_gestion_sortie="none" c_statistiques="active-menu" c_administration="none" c_gestion_clients="none" c_gestion_fournisseurs="none" c_gestion_stock="none" v_name="Statistiques relatifs aux achats" %}
+{% load static %}
+<div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">STATISTIQUES RELATUFS AUX ACHATS</h1>
+                    </div>
+                    <img src="{% static 'img/achats.png' %}" alt="" />
+                </div>
+            </div>
+        </div>
+{% include 'footer.html'%}

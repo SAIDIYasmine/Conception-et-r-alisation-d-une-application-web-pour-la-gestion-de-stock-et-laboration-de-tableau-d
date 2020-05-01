@@ -1,0 +1,53 @@
+{% include 'header.html' with c_acceuil="none" c_gestion_produits="active-menu" c_gestion_entree="none" c_gestion_sortie="none" c_statistiques="none" c_administration="none" c_gestion_clients="none" c_gestion_fournisseurs="none" c_gestion_stock="none" v_name="Gestion Des Produits" %}
+{% load static %}
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Gestion des produits</h1>
+                    </div>
+                </div>
+                <p>
+                    <form >
+                    <button class="btn btn-primary" formaction="/ajouter_produit/"><i class="glyphicon glyphicon-plus"></i> Ajouter</button>
+                    </form>  
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Action</th>
+                                <th>Designation</th>
+                                <th>Catégorie</th>
+                                <th>Etat du stock</th>
+                                <th>Prix d'achat</th>
+                                <th>Prix de vente</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for produit in produits %}
+                            <tr>
+                                <td>{{produit.id}}</td>
+                                <td><form method="post">  
+                                        {% csrf_token %}
+
+                                    <button class="btn btn-danger" formaction="../supprimer_produit/{{produit.id}}/" value="{{produit.id}}"><i class="glyphicon glyphicon-minus"></i> Supprimer</button>
+                                    <button class="btn btn-inverse"><i class="fa fa-refresh"></i> Modifier</button>
+                                </form></td>
+                                <td>{{produit.produit_designation}}</td>
+                                <td>{{produit.produit_categorie}}</td>
+                                <td>{{produit.produit_etat_stock}}</td>
+                                <td>{{produit.produit_prix_achat}}</td>
+                                <td>{{produit.produit_prix_vente}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include 'footer.html'%}
+

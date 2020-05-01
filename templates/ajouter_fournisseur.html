@@ -1,0 +1,44 @@
+{% include 'header.html' with c_acceuil="none" c_gestion_produits="none" c_gestion_entree="none" c_gestion_sortie="none" c_statistiques="none" c_administration="none" c_gestion_clients="none" c_gestion_fournisseurs="active-menu" c_gestion_stock="none" v_name="Gestion Des Fournisseurs" %}
+{% load static %}
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">Gestion des fournisseurs</h1>
+                <h1 class="page-subhead-line">Ajouter Un Fournisseur</h1>
+            </div>
+        </div>
+       <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="panel panel-danger">
+                <div class="panel-body">
+                    <form role="form" action="/ajouter_fournisseur_submit/" method="post">  
+                        {% csrf_token %}        
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input name="fournisseur_nom" class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Adresse</label>
+                            <input name="fournisseur_adresse" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Mail</label>
+                            <input name="fournisseur_mail" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Tel</label>
+                            <input name="fournisseur_tel" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Ajouter </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% include 'footer.html'%}
+

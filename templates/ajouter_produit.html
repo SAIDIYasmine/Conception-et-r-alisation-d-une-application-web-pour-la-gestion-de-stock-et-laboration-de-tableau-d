@@ -1,0 +1,48 @@
+{% include 'header.html' with c_acceuil="none" c_gestion_produits="active-menu" c_gestion_entree="none" c_gestion_sortie="none" c_statistiques="none" c_administration="none" c_gestion_clients="none" c_gestion_fournisseurs="none" c_gestion_stock="none" v_name="Gestion Des Produits" %}
+{% load static %}
+<div id="page-wrapper">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-head-line">Gestion des produits</h1>
+                <h1 class="page-subhead-line">Ajouter Un Produit</h1>
+            </div>
+        </div>
+       <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="panel panel-danger">
+                <div class="panel-body">
+                    <form role="form" action="/ajouter_produit_submit/" method="post">  
+                        {% csrf_token %}        
+                        <div class="form-group">
+                            <label>Designation</label>
+                            <input name="produit_designation" class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Catégorie</label>
+                            <input name="produit_categorie" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Etat du stock</label>
+                            <input name="produit_etat_stock" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Prix d'achat</label>
+                            <input name="produit_prix_achat" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Prix de vente</label>
+                            <input name="produit_prix_vente" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Ajouter </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% include 'footer.html'%}
+
